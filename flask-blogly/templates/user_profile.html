@@ -7,10 +7,19 @@
     <title>{{user.name}}</title>
 </head>
 <body>
-    <h1>{{user.name}}</h1>
     <img src="{{user.image_url}}" alt="profile picture">
+    <h1>{{user.name}}</h1>
     <p>{{user.first_name}} {{user.last_name}}</p>
     <button>edit</button>
     <button>delete</button>
+
+    <h2>Posts</h2>
+    <ul>
+        {%for post in user.posts%}
+            <li><a href="{{url_for(post_detail)}}"></a>{{post.title}}</li>
+        {%endfor%}
+        <button>Add Post</button>
+        
+    </ul>
 </body>
 </html>
