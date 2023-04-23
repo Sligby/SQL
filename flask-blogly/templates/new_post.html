@@ -12,6 +12,10 @@
     <input type="text" name="title" id="title">
     <label for="content"> Content</label>
     <input type="text" name="content" id="content">
+    {%for tag in tags%}
+    <input type="checkbox" name="{{tag.tag_name}}" id="{{tag.tag_name}}" value="{{tag.id}}">
+    <label for="{{ tag.tag_name }}">{{ tag.tag_name }}</label>
+    {%endfor%}
     <button>ADD</button>
     <button>CANCEL</button>
 </body>

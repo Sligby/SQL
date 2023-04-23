@@ -10,6 +10,10 @@
     <h1>{{post.title}}</h1>
     <p>{{post.contents}}</p>
     <p>BY{{user.first_name}} {{user.last_name}}</p>
+    <p>Tags:  {% for tag in post.tags %}
+        {{ tag.name }}
+        {% if not loop.last %}, {% endif %}
+    {% endfor %}</p>
     <button>cancel</button>
     <button>edit</button>
     <button>delete</button>

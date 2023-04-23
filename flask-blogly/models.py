@@ -65,3 +65,4 @@ class PostTag(db.model):
     tag=db.relationship('Tag', back_populates='posts')
 
     __table_args__= (db.UniqueConstraint('post_id', 'tag_id'))
+    
